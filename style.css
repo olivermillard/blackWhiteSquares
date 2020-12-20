@@ -1,0 +1,68 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: purple;
+}
+
+#mainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#blockContainer {
+  top: 0;
+  left: 0;
+}
+
+.block,
+.reverseBlock {
+  background-color: black;
+  border-radius: 25%;
+  border: 2.5px solid white;
+}
+
+.block {
+  animation-name: rotateCW;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+
+@keyframes rotateCW {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(180deg);
+  }
+}
+
+.reverseBlock {
+  animation-name: rotateCCW;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+@keyframes rotateCCW {
+  from {
+    transform: rotateZ(0deg);
+    background-color: black;
+    border-color: white;
+  }
+  to {
+    transform: rotateZ(-180deg);
+    background-color: white;
+    border-color: black;
+  }
+}
